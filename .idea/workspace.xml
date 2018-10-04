@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a48f5ff1-2126-48cf-8276-d2720fd475fb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/model/data/Cell.java" afterPath="$PROJECT_DIR$/src/model/data/Cell.java" />
-      <change beforePath="$PROJECT_DIR$/src/view/Run.java" afterPath="$PROJECT_DIR$/src/view/Run.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="Run.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/Run.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1281">
-              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="204" column="29" lean-forward="false" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="29" />
               <folding>
                 <element signature="e#1710#1711#0" expanded="true" />
                 <element signature="e#1746#1747#0" expanded="true" />
@@ -351,12 +350,12 @@
       <workItem from="1522958952974" duration="292000" />
       <workItem from="1523304302051" duration="5000" />
       <workItem from="1528788071018" duration="394000" />
-      <workItem from="1538503831510" duration="15364000" />
+      <workItem from="1538503831510" duration="15942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17022000" />
+    <option name="totallyTimeSpent" value="17600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="800" extended-state="6" />
@@ -784,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Run.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1281">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        <state relative-caret-position="54">
+          <caret line="204" column="29" lean-forward="false" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="29" />
           <folding>
             <element signature="e#1710#1711#0" expanded="true" />
             <element signature="e#1746#1747#0" expanded="true" />
