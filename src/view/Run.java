@@ -33,10 +33,8 @@ public class Run extends Application {
     static Pane hold;
     static Label currentScore;
     
-    
-//    static TickThread tickThread;
+
     static DrawerThread drawerThread;
-//    static MusicThread musicThread;
     static AudioClip audio;
 //    static String originalMusic = "file:src/View/sound/original.wav";
 //    static String remixMusic = "file:src/View/sound/remix.wav";
@@ -158,19 +156,6 @@ public class Run extends Application {
         rectangle.setStyle(Properties.getStyleForCelltype(t));
         target.getChildren().add(rectangle);
     }
-
-    
-//    static void toggleGame(){
-//        if (game.isPaused()) {
-////            game.togglePause();
-//            game.unpause();
-//            startThreads();
-//        } else {
-////            game.togglePause();
-//            game.pause();
-//            stopThreads();
-//        }
-//    }
     
     public static void pauseGame(){
         game.pause();
@@ -193,10 +178,6 @@ public class Run extends Application {
             drawerThread.stopExecuting();
             stopMusic();
         }
-    }
-    
-    static Game getGame(){
-        return game;
     }
     
     public static void setScene(Scene scene){

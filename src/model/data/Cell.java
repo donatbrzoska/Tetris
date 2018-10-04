@@ -5,8 +5,6 @@
  */
 package model.data;
 
-import model.data.Celltype;
-
 /**
  *
  * @author donatdeva
@@ -29,13 +27,6 @@ public class Cell {
     public boolean isSet(){
         return set;
     }
-    
-    /*void set(boolean set){
-        this.set = set;
-        if (!set) {
-            type = Celltype.X;
-        }
-    }*/
     
     public Celltype getType(){
         return type;
