@@ -7,6 +7,7 @@ package remains;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import view.Scenes;
 
 /**
  * 
@@ -26,7 +27,7 @@ public class Run extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("TETRIS");
-        stage.setScene(view.Run.ingameGUI());
+        stage.setScene(Scenes.getIngameGUI());
         stage.show();
     }
     

@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package controller;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
+import view.Run;
+import view.Scenes;
 
 /**
  *
@@ -16,7 +18,7 @@ public class SettingsEventHandler implements EventHandler<MouseEvent>{
 
     @Override
     public void handle(MouseEvent t) {
-        Run.setScene(Run.settingsMenu());
+        Run.setScene(Scenes.getSettingsMenu());
     }
     
 }

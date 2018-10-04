@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package controller;
 
 import static view.Run.game;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import view.Run;
+import view.Scenes;
 
 /**
  *
@@ -46,8 +48,8 @@ public class KeyEventHandler implements EventHandler<KeyEvent>{
             System.out.println("Escape key pressed");
 //            Run.toggleGame();
             Run.pauseGame();
-//            Run.stageLink.setScene(Run.pauseMenu());
-            Run.setScene(Run.pauseMenu());
+//            Run.stageLink.setScene(Run.getPauseMenu());
+            Run.setScene(Scenes.getPauseMenu());
         }
         if(event.getCode() == KeyCode.Q) {
             System.out.println("Cheating");

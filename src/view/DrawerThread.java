@@ -36,7 +36,7 @@ public class DrawerThread extends Thread{
 //                System.out.println("GAME OVER DETECTED BY DRAWER THREAD");
                 Run.pauseGame();
                 Platform.runLater(() -> {
-                    Run.stageLink.setScene(Run.gameOverMenu());
+                    Run.stageLink.setScene(Scenes.getGameOverMenu());
                 });
 //                Run.toggleGame();
             } else {
