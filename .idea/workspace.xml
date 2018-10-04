@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a48f5ff1-2126-48cf-8276-d2720fd475fb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/remains/Run.java" afterPath="$PROJECT_DIR$/src/remains/Run.java" />
-      <change beforePath="$PROJECT_DIR$/src/view/ControlsEventHandler.java" afterPath="$PROJECT_DIR$/src/controller/ControlsEventHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/view/DrawerThread.java" afterPath="$PROJECT_DIR$/src/view/DrawerThread.java" />
-      <change beforePath="$PROJECT_DIR$/src/view/KeyEventHandler.java" afterPath="$PROJECT_DIR$/src/controller/KeyEventHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/view/Properties.java" afterPath="$PROJECT_DIR$/src/view/Properties.java" />
-      <change beforePath="$PROJECT_DIR$/src/view/Run.java" afterPath="$PROJECT_DIR$/src/view/Run.java" />
-      <change beforePath="$PROJECT_DIR$/src/view/SettingsEventHandler.java" afterPath="$PROJECT_DIR$/src/controller/SettingsEventHandler.java" />
+      <change beforePath="$PROJECT_DIR$/src/controller/KeyEventHandler.java" afterPath="$PROJECT_DIR$/src/controller/KeyEventHandler.java" />
+      <change beforePath="$PROJECT_DIR$/src/remains/ITile.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/ListenerThread.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/Modes.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/MusicThread.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/OOBMode.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/OTile.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/OtherTile.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/Run.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/remains/Test.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Run.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Run.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/Run.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-447">
@@ -33,6 +35,43 @@
                 <element signature="e#5747#5748#0" expanded="true" />
                 <element signature="e#5798#5799#0" expanded="true" />
                 <element signature="e#5839#5840#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackFromSettingsOrControlsEventHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/BackFromSettingsOrControlsEventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackToMainMenuEventHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/BackToMainMenuEventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControlsEventHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/ControlsEventHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+              <folding>
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KeyEventHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="KeyEventHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/KeyEventHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+            <state relative-caret-position="93">
+              <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,16 +141,6 @@
               <folding>
                 <element signature="method#getStyleForCelltype#0;class#Properties#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -179,6 +208,7 @@
         <option value="$PROJECT_DIR$/src/view/Scenes.java" />
         <option value="$PROJECT_DIR$/src/controller/NewGameEventHandler.java" />
         <option value="$PROJECT_DIR$/src/view/Run.java" />
+        <option value="$PROJECT_DIR$/src/controller/KeyEventHandler.java" />
       </list>
     </option>
   </component>
@@ -413,12 +443,12 @@
       <workItem from="1522958952974" duration="292000" />
       <workItem from="1523304302051" duration="5000" />
       <workItem from="1528788071018" duration="394000" />
-      <workItem from="1538503831510" duration="14636000" />
+      <workItem from="1538503831510" duration="14806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16294000" />
+    <option name="totallyTimeSpent" value="16464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="800" extended-state="6" />
@@ -719,17 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ControlsEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/SettingsEventHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -772,52 +791,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/KeyEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ExitEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/DrawerThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/BackFromSettingsOrControlsEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/BackToMainMenuEventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -861,6 +838,59 @@
             <element signature="e#5747#5748#0" expanded="true" />
             <element signature="e#5798#5799#0" expanded="true" />
             <element signature="e#5839#5840#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/BackFromSettingsOrControlsEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/BackToMainMenuEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ControlsEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ExitEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/KeyEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

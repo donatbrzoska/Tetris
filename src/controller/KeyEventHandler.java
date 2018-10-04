@@ -46,9 +46,7 @@ public class KeyEventHandler implements EventHandler<KeyEvent>{
         }
         if(event.getCode() == KeyCode.ESCAPE) {
             System.out.println("Escape key pressed");
-//            Run.toggleGame();
             Run.pauseGame();
-//            Run.stageLink.setScene(Run.getPauseMenu());
             Run.setScene(Scenes.getPauseMenu());
         }
         if(event.getCode() == KeyCode.Q) {
