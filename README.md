@@ -6,6 +6,6 @@ This project was developed in my third semester. The assignment was to program a
 Currently I am doing some refactoring.
 
 
-![](readme_resources/main_menu.png)
+![](readme_resources/main_menu.png =600x)
 
 ![](readme_resources/demo.gif)
