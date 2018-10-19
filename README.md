@@ -8,4 +8,5 @@ Currently I am doing some refactoring.
 In order to get the fancy title font ingame, you need to install it first. It is located at src/view/resources/font/Block Stock.tff
 
 <img src="./readme_resources/main_menu.png" width="600"/>
-![](readme_resources/demo.gif)
+!
+<img src="./readme_resources/demo.gif" width="600"/>[](readme_resources/demo.gif)
