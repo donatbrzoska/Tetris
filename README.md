@@ -5,4 +5,7 @@ This project was developed in my third semester. The assignment was to program a
 
 Currently I am doing some refactoring.
 
-![](readmeSrc/demo.gif)
+
+![](readme_resources/demo.gif)
+
+![](readme_resources/main_menu.png)
