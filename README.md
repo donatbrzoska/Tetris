@@ -5,7 +5,7 @@ This project was developed in my third semester. The assignment was to program a
 
 Currently I am doing some refactoring.
 
+In order to get the fancy title font ingame, you need to install it first. It is located at src/view/resources/font/Block Stock.tff
 
-![](readme_resources/main_menu.png =600x)
 <img src="./readme_resources/main_menu.png" width="600"/>
 ![](readme_resources/demo.gif)
