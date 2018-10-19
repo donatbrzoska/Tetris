@@ -7,5 +7,5 @@ Currently I am doing some refactoring.
 
 
 ![](readme_resources/main_menu.png =600x)
-
+<img src="./readme_resources/main_menu.png" width="600"/>
 ![](readme_resources/demo.gif)
