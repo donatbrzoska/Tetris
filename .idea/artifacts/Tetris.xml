@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="Tetris">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tetris</output-path>
+    <root id="root">
+      <element id="archive" name="Tetris.jar">
+        <element id="module-output" name="Tetris" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

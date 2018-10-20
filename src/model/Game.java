@@ -73,31 +73,16 @@ public class Game {
     private static Difficulty difficulty = Difficulty.MEDIUM;
     
     private final int MAXCORRECTIONSTEPS = 2;
-    private final boolean loggingOn = false; //setCells Logging requires a LOT of power
+    private final boolean loggingOn = false; //setCells Logging, requires a LOT of power
     
     
     public Game(){
         newGame();
     }
+
     
     /**
-     * Method that determines whether a given coordinate is already set on the field
-     * @param c Coordinate to be checked
-     * @return Coordinate colliding with tile, no collision returns null
-     */
-    private Coordinate tileCollision(Coordinate c){
-        LinkedList<Coordinate> setCells = getSetCells();
-        log("Set cells: " + Arrays.toString(setCells.toArray()));
-        for (int i=0; i<setCells.size(); i++){
-            if (c.equals(setCells.get(i))) {
-                return c;
-            }
-        }
-        return null;
-    }
-    
-    /**
-     * Method that corrects collisions if occured
+     * Method that corrects collisions if occurred
      * @return True, if something was corrected; false if not
      */
     private boolean collisionCorrection(){
@@ -114,7 +99,7 @@ public class Game {
                         applyCurrentTile();
                     }
                     break;
-                case TRYLEFT:   //versuche zu fixen, wenn nicht erfolgreich -> zuruecksetzen
+                case TRYLEFT:   //try to fix, if not successful -> reset
                     fixed = false;
                     movedCounter = 0;
                     for (int i=0; i<MAXCORRECTIONSTEPS; i++) {
@@ -189,7 +174,7 @@ public class Game {
     }
     
     /**
-     * Method that detects collisions and says wich correction command fixes them
+     * Method that detects collisions and says which correction command fixes them
      * @return correction command that fixes the collision
      */
     private CorrectionCommand collisionDetection(){
@@ -228,8 +213,60 @@ public class Game {
     }
     
     /**
-     * Method that detects wether collisions occur     
-     * @param Tile tile that needs to be checked for collisions
+     * Method that determines, which correction command may fix the collision with the border
+     * @return Command that fixes the collision
+     */
+    CorrectionCommand getCorrectionCommand(BorderCollision borderCollision){
+        Change lastChange = current.getLastChange();
+        switch(lastChange){
+            case MOVEDDOWN:
+                return CorrectionCommand.APPLY;
+            case ROTATED:
+                switch (borderCollision){
+                    case TOP:
+                        return CorrectionCommand.TRYDOWN;
+                    case RIGHT:
+                        return CorrectionCommand.TRYLEFT;
+                    case BOTTOM:
+                        return CorrectionCommand.TRYUP;
+                    case LEFT:
+                        return CorrectionCommand.TRYRIGHT;
+                }
+            default:    //MOVEDLEFT, MOVEDRIGHT
+                return CorrectionCommand.STEPBACK;
+        }
+    }
+
+    /**
+     * Method that determines, which correction command may fix the collision with another tile
+     * @param coordinate
+     * @return Command that fixes the collision
+     */
+    CorrectionCommand getCorrectionCommand(Coordinate coordinate){
+        Change lastChange = current.getLastChange();
+        switch(lastChange){
+            case MOVEDDOWN:
+                return CorrectionCommand.APPLY;
+            case ROTATED:
+                CorrectionRestriction restriction = getCollisionCorrectionRestriction(coordinate);
+                switch(restriction) {
+                    case MOVELEFT:
+                        return CorrectionCommand.TRYLEFT;
+                    case MOVERIGHT:
+                        return CorrectionCommand.TRYRIGHT;
+                    case MOVEDOWN:
+                        return CorrectionCommand.TRYDOWN;
+                    case MOVEUP:
+                        return CorrectionCommand.TRYUP;
+                }
+            default:    //MOVEDLEFT, MOVEDRIGHT
+                return CorrectionCommand.STEPBACK;
+        }
+    }
+
+    /**
+     * Method that detects whether collisions occur
+     * @param c coordinates of the tile that needs to be checked for collisions
      * @return True if collisions occur; false if not
      */
     private boolean collisionOccurs(Coordinate[] c){
@@ -265,68 +302,32 @@ public class Game {
         }
         return false;
     }
-    
+
     /**
-     * Method that determines, wich correction command may fix the collision with a border
-     * @return Command that fixes the collision
+     * Method that determines whether a given coordinate is already set on the field
+     * @param c Coordinate to be checked
+     * @return Coordinate colliding with tile, no collision returns null
      */
-    CorrectionCommand getCorrectionCommand(BorderCollision borderCollision){
-        Change lastChange = current.getLastChange();
-        switch(lastChange){
-            case MOVEDDOWN:
-                return CorrectionCommand.APPLY;
-            case ROTATED:
-                switch (borderCollision){
-                    case TOP:
-                        return CorrectionCommand.TRYDOWN;
-                    case RIGHT:
-                        return CorrectionCommand.TRYLEFT;
-                    case BOTTOM:
-                        return CorrectionCommand.TRYUP;
-                    case LEFT:
-                        return CorrectionCommand.TRYRIGHT;
-                }
-            default:    //MOVEDLEFT, MOVEDRIGHT
-                return CorrectionCommand.STEPBACK;
+    private Coordinate tileCollision(Coordinate c){
+        LinkedList<Coordinate> setCells = getSetCells();
+        log("Set cells: " + Arrays.toString(setCells.toArray()));
+        for (int i=0; i<setCells.size(); i++){
+            if (c.equals(setCells.get(i))) {
+                return c;
+            }
         }
+        return null;
     }
     
     /**
-     * Method that determines, wich correction command may fix the collision with another coordinate
-     * @param Coordinate 
-     * @return Command that fixes the collision
-     */
-    CorrectionCommand getCorrectionCommand(Coordinate coordinate){
-        Change lastChange = current.getLastChange();
-        switch(lastChange){
-            case MOVEDDOWN:
-                return CorrectionCommand.APPLY;
-            case ROTATED:
-                CorrectionRestriction restriction = getCollisionCorrectionRestriction(coordinate);
-                switch(restriction) {
-                    case MOVELEFT:
-                        return CorrectionCommand.TRYLEFT;
-                    case MOVERIGHT:
-                        return CorrectionCommand.TRYRIGHT;
-                    case MOVEDOWN:
-                        return CorrectionCommand.TRYDOWN;
-                    case MOVEUP:
-                        return CorrectionCommand.TRYUP;
-                }
-            default:    //MOVEDLEFT, MOVEDRIGHT
-                return CorrectionCommand.STEPBACK;
-        }
-    }
-    
-    /**
-     * Method that determines in wich direction the tile is allowed to be corrected
+     * Method that determines in which direction the tile is allowed to be corrected
      * @param collided Coordinate of the collided tile that collided with another tile
      * @return Restriction of the direction the tile is allowed to be corrected
      */
     CorrectionRestriction getCollisionCorrectionRestriction(Coordinate collided){
         LinkedList<Coordinate> otherTileCoords = new LinkedList<>();
         Coordinate[] currentCoords = current.getCoordinates();
-        for (int i=0; i<currentCoords.length; i++){     //extrahiere die Koordinaten des current tiles die nicht kollidiert sind
+        for (int i=0; i<currentCoords.length; i++){     //extract coordinates of current tiles, that did not collide
             if (currentCoords[i] != collided) {
                 otherTileCoords.add(currentCoords[i]);
             }
@@ -334,7 +335,7 @@ public class Game {
         log("Colliding: " + collided.toString());
         log("Rest: " + otherTileCoords.toString());
         
-        //zaehlen wie viele vom Rest der Koordinaten links, rechts, ueber und unter der kollidierten Koordinate sind
+        //count how many of the rest of the coordinates are at the right, above or under the collided coordinate //zaehlen wie viele vom Rest der Koordinaten links, rechts, ueber und unter der kollidierten Koordinate sind
         int left = 0;
         int right = 0;
         int under = 0;
@@ -411,14 +412,15 @@ public class Game {
     private LinkedList<Integer> getFinishedLines(){
         LinkedList<Integer> finished = new LinkedList<>();
         for (int i=field.length-1; i>=0; i--){
-            boolean complete = true;
+            boolean lineComplete = true;
+
             for (int j=0; j<field[i].length; j++){
                 if (!(field[i][j].isSet())){
-                    complete = false;
+                    lineComplete = false;
                     break;
                 }
             }
-            if (complete) {
+            if (lineComplete) {
                 finished.add(i);
                 log("Line " + i + " is finished");
             }
@@ -447,7 +449,11 @@ public class Game {
         next = generateTiletype();
         return h;
     }
-    
+
+    /**
+     * Randomizer for tile type of next tile
+     * @return Tiletype to be generated
+     */
     private Tiletype generateTiletype(){
         Random r = new Random();
         int t = r.nextInt(7);
@@ -481,7 +487,7 @@ public class Game {
     private void applyCurrentTile(){
         Coordinate[] c = current.getCoordinates();
         for (int i=0; i<c.length; i++) {
-            field[c[i].y][c[i].x].setType(current.getType().getType());         //optimierbar???
+            field[c[i].y][c[i].x].setType(current.getType().getType());         //optimizable?
         }
         
         log("Tile applied");
@@ -635,7 +641,7 @@ public class Game {
                     break;
                 }
             }
-            while (!applyIsAllowed()) {     //Wartezeit dezimieren
+            while (!applyIsAllowed()) {     //decimate wait time
                 setApplyAllowed(true);
             }
             current.moveDown();
@@ -650,8 +656,8 @@ public class Game {
     }
 
     /**
-     * Method that looks for all set cells inclusive the current tile
-     * @return Array of cells that need to be set at the gui
+     * Method that looks for all set cells inclusive the current tile and its ghost
+     * @return Array of cells that need to be drawn at the gui
      */
     public Cell[][] getSetMatrix(){
         Cell[][] set = new Cell[field.length][field[0].length];
@@ -660,7 +666,7 @@ public class Game {
                 set[i][j] = new Cell();
             }
         }
-        //Uebertragung des Feldes
+        //actually set cells
         LinkedList<Coordinate> fieldCells = getSetCells();
         for (int i=0; i<fieldCells.size(); i++){
             Coordinate c = fieldCells.get(i);
@@ -668,7 +674,7 @@ public class Game {
         }
         
         log("Game over: " + getGameOver());
-        //Uebertragung des Ghosts
+        //ghost cells
         Coordinate[] ghostCells = getGhostCoordinates();
         log("Ghost Cells: " + Arrays.toString(ghostCells));
         for (int i=0; i<ghostCells.length; i++){
@@ -676,7 +682,7 @@ public class Game {
             set[c.y][c.x].setType(toGhostType(current.getType().getType()));
         }
         
-        //Uebertragung des moving Tiles
+        //current tile
         Coordinate[] currentCells = current.getCoordinates();
         log("Current Cells: " + Arrays.toString(currentCells));
         for (int i=0; i<currentCells.length; i++){

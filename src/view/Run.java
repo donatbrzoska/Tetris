@@ -40,7 +40,7 @@ public class Run extends Application {
 //    static String remixMusic = "file:src/View/sound/remix.wav";
 //    static String click = "file:src/View/sound/click.mp3";
     static String originalMusic = "resources/sound/original.wav";
-    static String remixMusic = "resources/sound/remix.wav";
+//    static String remixMusic = "resources/sound/remix.wav";
     static String click = "resources/sound/click.mp3";
     static boolean original = true; //original music or not is meant
 
@@ -201,20 +201,20 @@ public class Run extends Application {
         }
     }
     
-    static void toggleMusic(){
-        if (Properties.musicOn){
-            audio.stop();
-            if (original){
-                startMusic(remixMusic);
-                original = false;
-//                System.out.println("Now playing remix");
-            } else {
-                startMusic(originalMusic);
-                original = true;
-//                System.out.println("Now playing original");
-            }
-        }
-    }
+//    static public void toggleMusic(){
+//        if (Properties.musicOn){
+//            audio.stop();
+//            if (original){
+//                startMusic(remixMusic);
+//                original = false;
+////                System.out.println("Now playing remix");
+//            } else {
+//                startMusic(originalMusic);
+//                original = true;
+////                System.out.println("Now playing original");
+//            }
+//        }
+//    }
     
     static void clickSound(){
         int s = 1;

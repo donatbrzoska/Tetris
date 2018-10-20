@@ -19,11 +19,7 @@ public class Coordinate {
     }
     
     public boolean equals(Coordinate coordinate){
-        if (x==coordinate.x && y==coordinate.y) {
-            return true;
-        } else {
-            return false;
-        }
+        return (x==coordinate.x && y==coordinate.y);
     }
     
     public void add(Coordinate coordinate){
